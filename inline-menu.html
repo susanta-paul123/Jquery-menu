@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Body push menu</title>
+<style>
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+body {
+	background: #bb2a04;
+	color: #fff;
+}
+.main {
+	max-width: 1140px;
+	margin: 0 auto;
+	position: relative;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.button {
+	width: 40px;
+	height: 40px;
+	background-image: url(buttonbg.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	border: none;
+	text-indent: -9999px;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	position: relative;
+	z-index: 4
+}
+.button.bt {
+	background-position: -40px 0px;
+}
+.menu {
+	float: right;
+}
+.topBar {
+	background: #fd9f13;
+	min-height: 40px;
+	padding: 15px 0;
+	width: 100%;
+	position: relative;
+	z-index: 3;
+}
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.nav {
+	float: right;
+	visibility: hidden;
+	transition: all ease-in 0.4s;
+	-webkit-transition: all ease-in 0.4s;
+	-moz-transition: all ease-in 0.4s;
+	opacity: 0;
+	margin-top: 10px;
+	margin-right: 20px;
+	top:-20px;
+	position:relative;
+}
+.nav li {
+	display: inline-block;
+	float: left;
+}
+.nav li a {
+	text-transform: uppercase;
+	color: #fff;
+	padding: 0px 10px;
+	text-decoration: none;
+}
+.openclose {
+	visibility: visible;
+	opacity: 1;
+	top:0px;
+	position:relative;
+}
+.nav.openclose {
+}
+.logo {
+	float: left;
+}
+@media(max-width:767px) {
+.nav {
+	float: none;
+	padding: 15px 0px;
+	position: fixed;
+	width: 100%;
+	background: #fdc313;
+	top: -30%;
+	left:0;
+}
+.openclose {
+	left: 0;
+	top: -15px;
+}
+.nav li {
+	display: block;
+	float: none;
+}
+.menu {
+	float: none;
+}
+.button{position:fixed; right:15px; top:15px;}
+}
+</style>
+</head>
+
+<body>
+<div class="topBar">
+  <div class="main clearfix">
+    <div class="logo"><a href="#"><img src="logo.png" /></a></div>
+    <div class="menu">
+      <div class="button"></div>
+      <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div style="padding:15px;">
+  <div class="main">
+    <h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+      text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+      It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+      It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+      and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+      text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+      It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+      It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+      and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+      text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+      It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+      It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+      and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h1>
+  </div>
+</div>
+<script src="jquery.min.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() 
+	{
+		$(".button").click(function(){
+			$(this).toggleClass("bt")
+			$(".nav").toggleClass("openclose")
+			});
+		});	
+	
+$(document).ready(myfunction);
+$(window).on('resize',myfunction);
+	function myfunction() {
+	var gh = $(window).height();
+	if($(window).width()<768)
+		{
+		$(".nav").height(gh);
+		
+		}
+		else{
+		$(".nav").css("height","auto");
+		}
+	}
+	
+
+</script>
+</body>
+</html>

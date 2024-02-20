@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<style type="text/css">
+*{margin:0px; padding:0px;}
+*{box-sozing:border-box; -webkit-box-sozing:border-box; -moz-box-sozing:border-box;}
+body {
+	height: 1600px;
+}
+.bottomMenu {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	border-top: 1px solid #000;
+	background: red;
+	z-index: 1;
+}
+.scrollPast {
+	width: 100%;
+	height: 150px;
+	background: #397982;
+	position: relative;
+	top: 50px;
+	margin: 20px 0;
+}
+h1 {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	color:#fff;
+	padding:15px;
+}
+</style>
+<title>by apaul34208</title>
+
+</head>
+
+<body>
+<div class="scrollPast">
+  <h1>I fade in when you scroll to my parent</h1>
+</div>
+<div class="scrollPast">
+  <h1>I fade in when you scroll to my parent</h1>
+</div>
+<div class="scrollPast">
+  <h1>I fade in when you scroll to my parent</h1>
+</div>
+<div class="bottomMenu">I fade in when you scroll past 800px</div>
+
+
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+$(document).scroll(function () {
+    //Show element after user scrolls 800px
+    var y = $(this).scrollTop();
+    if (y > 800) {
+        $('.bottomMenu').fadeIn();
+    } else {
+        $('.bottomMenu').fadeOut();
+    }
+
+    // Show element after user scrolls past 
+    // the top edge of its parent 
+    $('h1').each(function () {
+        var t = $(this).parent().offset().top;
+        if (y > t) {
+            $(this).fadeIn();
+        } else {
+            $(this).fadeOut();
+        }
+    });
+});
+});//]]> 
+
+</script>
+
+</body>
+</html>

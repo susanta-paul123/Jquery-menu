@@ -1,0 +1,39 @@
+/* Styles for sticky content demo
+ * Author: Andrew Henderson (@AndrewHenderson)
+ */
+ *{margin:0px; padding:0px;}
+ *{box-sizing:border-box; -webkit-box-sizing:border-box;}
+body{padding-top:60px;}
+img{vertical-align:middle;}
+#wrapper { 
+	width:960px;
+	margin:0 auto;
+}
+#header {
+	border-bottom:1px solid #ccc;
+	padding:10px 0;
+}
+.topbar{position:fixed; left:0; top:0; background:#990; height:50px; width:100%;}
+#sidebar {
+	float:right;
+	width:240px;
+	
+}
+#sidebar #widget {
+		width:240px;
+		margin-bottom:10px;
+		border-bottom:1px solid #ccc;
+		padding-top:50px;
+	}
+.fixed{top:0px; position:fixed;}
+#article {
+	width:660px;
+	padding-right:30px;
+	border-right:1px solid #ccc;
+}
+#footer {
+	border-top:1px solid #ccc;
+	padding:10px;
+}
+h1 { margin:0; }
+h2 { margin:0 0 0.5em; }

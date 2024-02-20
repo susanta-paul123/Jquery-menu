@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<title>Untitled Document</title>
+<style>
+body{margin:0px; padding:0px;}
+* {
+	box-sizing: border-box;
+	margin:0px; padding:0px;
+}
+ul{list-style:none;}
+.nav {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.nav li {
+	float: left;
+	position:relative;
+	border-right:1px solid #0CF;
+}
+.nav li:last-child{border-right:none;}
+.nav li a {
+	display: block;
+	padding: 0px 30px 0px 20px;
+	text-decoration: none;
+	background: #09C;
+	color: #fff;
+	line-height: 40px;
+}
+.nav li ul{position:absolute; visibility:hidden; background:#09F; top:100px; transition:ease-in-out all 0.5s; opacity:0; z-index:2; display:block;}
+.nav li ul li{float:none;}
+.nav li ul li a{padding:0px 20px;  background:#06C; color:#fff; border-bottom:1px solid #09C; white-space:nowrap;}
+.nav li:hover ul{visibility:visible; top:100%; opacity:1;}
+.btn {
+	background: #f00 none repeat scroll 0 0;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    width: 50px;
+}
+.icon{position:absolute; width:0px; height:0px; content:''; display:block; border-top:6px solid #FFF; border-left:5px solid transparent;
+ border-right:5px solid transparent; right:10px; top:18px; transition:all ease-in 0.2s;}
+ 
+.icon.clicked{
+	-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg);} 
+.over {
+	background: #000;
+}
+.over .line1 {
+}
+.over .line2 {
+}
+.over .line3 {
+}
+.btn .line1, .btn .line2, .btn .line3 {
+	width: 100%;
+	height: 3px;
+	background: #fff;
+	margin-bottom: 5px;
+	display: block;
+}
+.btn .line3 {
+	margin-bottom: 0px;
+}
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+.menubar {
+	background: #09C;
+	position:relative;
+	height:40px;
+}
+.menubar:before, .menubar:after {
+	display: table;
+	content: "";
+}
+.menubar:after {
+	clear: both;
+}
+ @media(min-width:768px) {
+.btn {
+	display: none;
+}
+}
+ @media(max-width:767px) {
+#menu {
+	display: none;
+	top:40px;
+	position:relative;
+	width:100%;
+	
+}
+.nav li {
+	float: none;
+	
+}
+.menubar{background:#036;}
+.nav li a {
+	display: block;
+	padding: 0px 20px;
+	text-decoration: none;
+	background: #09C;
+	color: #fff;
+	line-height: 30px;
+}
+.icon{right:15px;}
+.nav li ul{position:relative; display:none; top:100%; transition:none; z-index:2; visibility:visible; opacity:1}
+}
+.banner img{max-width:100%;}
+</style>
+</head>
+
+<body>
+<div class="container">
+<div class="menubar">
+  <div class="btn"> <span class="line1"></span> <span class="line2"></span> <span class="line3"></span> </div>
+    <div id="menu">
+      <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li>
+        <a href="https://www.google.co.in/">Services</a>
+        	<ul>
+            	<li><a href="http://stackoverflow.com/">Service number 1</a></li>
+                <li><a href="#">Service number 2</a></li>
+                <li><a href="#">Service number 3</a></li>
+                <li><a href="#">Service number 4</a></li>
+            </ul>
+        </li>
+        <li>
+        <a href="https://www.google.co.in/">Products</a>
+        	<ul>
+            	<li><a href="http://stackoverflow.com/">Product number 1</a></li>
+                <li><a href="#">Product number 2</a></li>
+                <li><a href="#">Product number 3</a></li>
+                <li><a href="#">Product number 4</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="banner"><img src="s4.jpg"/></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script>
+	$(window).resize(function(){
+	  if ( $(window).width() < 768 ) 
+	  {
+		  $("#menu").hide();
+	  }
+	  else {
+		  $("#menu").show();
+		   }
+ 		}); // end resize function
+		
+	
+    $(document).ready(function()
+	{
+		$('.btn').click(function(){
+		$('.btn').toggleClass('over')
+		$("#menu").slideToggle();
+		});
+	
+	$("#menu ul.nav > li:has(ul)").prepend('<div class="icon"></div>'); //prepend a tag for mobile click
+	
+	if($(window).width()<768){
+	
+	$('.icon').click(function(e){
+	if($(this).hasClass('clicked'))
+		{
+		$(this).removeClass('clicked').parent().children('ul').slideUp(500);
+		}
+	else if($(this).parents().siblings().children('ul').hasClass('clicked'))
+		{
+		$('.clicked').slideDown();
+		$(this).addClass('clicked').parent().children('ul').slideDown(500);	
+		}
+	else{
+		$('#menu ul.nav li').children(".icon").removeClass('clicked').parent().children('ul').slideUp(500);
+		$(this).addClass('clicked').parent().children('ul').slideDown(500);	
+		}
+	
+	})
+	}
+	
+	else{
+		}
+	
+	}); // end ready function
+</script>
+</body>
+</html>

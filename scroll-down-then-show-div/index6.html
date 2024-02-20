@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+
+<link rel="stylesheet" type="text/css" href="/css/result-light.css">
+<style type="text/css">
+.container {
+	width: 100%;
+	height: 600px;
+}
+.topdiv {
+	position: relative;
+	height: 100%;
+	background-color: #09f;
+	text-align: center;
+	font-size: 24px;
+}
+.fadethisdiv {
+	height: 100%;
+	background-color: #36afff;
+	text-align: center;
+	font-size: 24px;
+}
+</style>
+<title></title>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type='text/javascript'>//<![CDATA[
+$(function(){
+$(document).ready(function(){
+    var view = {};
+    
+    var checkPosition = function(){
+       var elem = $('.fadethisdiv'), top = elem.offset().top;
+        
+					if (top - view.limit < 300) {
+						elem.css('display','none');	
+                    }
+				};
+    
+   $(window).unbind('scroll').bind('scroll', function() {
+      
+				view.top = $(window).scrollTop();
+				view.limit = view.top + $(window).height();
+
+				checkPosition();
+			}); 
+    
+});
+});//]]> 
+
+</script>
+</head>
+
+<body>
+<div class="container">
+  <div class="topdiv">This is a 100% height div. User scrolls down from here.</div>
+  <div class="fadethisdiv">This content should be faded in 
+    once .fadethisdiv is [so many]px into the bottom of the viewport.
+    Let's use 150px as an example.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background: #7e94b3;
+	color: #fff;
+}
+.abcd {
+	right: 0;
+	overflow-x: hidden;
+	position: relative;
+	transition: all ease-in 0.2s;
+}
+.abcd.toggleright {
+	right: 250px;
+	margin-right:0px;
+	
+	transition: all ease-in 0.2s;
+}
+
+img{vertical-align:middle;}
+.banner img{max-width:100%; background:#F00;}
+
+
+.menuDivright {
+	width: 250px;
+	background: #930;
+	position: fixed;
+	height: 100%;
+	top: 0;
+	transition: all ease-in 0.2s;
+	padding: 15px;
+	padding-top: 60px;
+}
+.menuDivhide2 {
+	right: -250px
+}
+
+.menuDivshow2 {
+	right: 0;
+}
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+
+
+/********Left and right button style*************/
+.rightbutton {
+	width: 40px;
+	height: 40px;
+	background:#fff;
+	border: none;
+	position: relative;
+	z-index: 2;
+	text-indent: -9999px;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+}
+.rightbutton.is-active{background:#F00;}
+
+
+/*************end**************/
+

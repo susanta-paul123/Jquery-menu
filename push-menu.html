@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Body push menu</title>
+<style>
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+/*
+html, body {
+	height: 100%;
+	width: 100%;
+}
+html{background:#f9C;}*/
+body {
+	background: #bb2a04;
+	color: #fff;
+}
+.menuDiv {
+	transition: all ease-in 0.2s;
+}
+.leftbutton {
+	width: 40px;
+	height: 40px;
+	background-image: url(buttonbg.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	border: none;
+	position: absolute;
+	z-index: 2;
+	text-indent: -9999px;
+	cursor: pointer;
+	display: inline-block;
+	right:-40px; 
+	top:60px;
+}
+.leftbutton.button {
+	background-position: -40px 0px;
+}
+.menuDivhide {
+	left: -250px;
+}
+.menuDiv {
+	width: 250px;
+	background: #930;
+	position: fixed;
+	height: 100%;
+	top: 0;
+	padding: 15px;
+	padding-top: 60px;
+}
+.menuDivshow {
+	left: 0;
+}
+.abcd {
+	left: 0;
+	overflow-x: hidden;
+	position: relative;
+	transition: all ease-in 0.2s;
+}
+.abcd.toggleleft {
+	margin-left: 250px;
+}
+.content {
+	padding: 15px;
+	padding-left:50px;
+}
+.menuDivright {
+	width: 250px;
+	background: #930;
+	position: fixed;
+	height: 100%;
+	top: 0;
+	transition: all ease-in 0.2s;
+	padding: 15px;
+	padding-top: 60px;
+}
+.menuDivhide2 {
+	right: -250px
+}
+.rightbutton {
+	width: 40px;
+	height: 40px;
+	background-image: url(buttonbg.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	border: none;
+	position: relative;
+	z-index: 2;
+	text-indent: -9999px;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+}
+.rightbutton.button {
+	background-position: -40px 0px;
+}
+.topBar {
+	background: #fd9f13;
+	left: 0;
+	min-height: 58px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10001;
+}
+.menuDivshow2 {
+	right: 0;
+}
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.opMenu li ul {
+	display: none;
+}
+.opMenu li {
+	border-bottom: 1px solid #F60;
+}
+.opMenu li.opened a {
+	background: #6d0b12;
+}
+.opMenu li a {
+	display: block;
+	background: #F30;
+	color: #fff;
+	font-size: 14px;
+	text-decoration: none;
+	padding: 3px 15px;
+}
+.opMenu li ul li a, .opMenu li.opened ul li a {
+	background: #ff7781;
+}
+.menuDiv h3 {
+	color: #fff;
+	margin-bottom: 15px;
+}
+.searchBox {
+	margin-top: 30px;
+}
+.searchBox input[type="text"] {
+	width: 100%;
+	height: 40px;
+	border: 1px solid #CCC;
+	flost: left;
+	padding: 0px 50px 0 15px;
+}
+.searchBox input[type="submit"] {
+	width: 40px;
+	height: 40px;
+	border: 1px solid #CCC;
+	flost: left;
+	margin-left: -40px;
+	cursor: pointer;
+}
+.leftbutton.Fixed {
+    position: fixed;
+    top: 0;
+}
+
+ @media(max-width:479px) {
+.abcd.toggleleft {
+	left: 250px;
+	margin-left: 0px;
+}
+}
+</style>
+</head>
+
+<body class="abcd">
+<div class="topBar"></div>
+<div style="padding-top:58px;">
+  <div><a href="#" class="rightbutton">Button</a> </div>
+  <div class="content">
+  
+  <h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+    text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+    text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+    text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
+    </h1>
+    </div>
+</div>
+<div class="menuDiv menuDivhide">
+	<a href="#" class="leftbutton">Button</a> 
+  <h3>Menu</h3>
+  <ul class="opMenu">
+    <li><a href="#">LV01-01</a>
+      <ul>
+        <li><a href="#">LV02</a></li>
+        <li><a href="#">LV02</a></li>
+        <li><a href="#">LV02</a></li>
+      </ul>
+    </li>
+    <li><a href="#">LV01-02</a>
+      <ul>
+        <li><a href="#">LV02</a></li>
+        <li><a href="#">LV02</a></li>
+        <li><a href="#">LV02</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div class="searchBox">
+    <input type="text" placeholder="Search"/>
+    <input type="submit" value="GO"/>
+  </div>
+</div>
+<div class="menuDivright menuDivhide2">Menu</div>
+<script src="jquery.min.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+	$(".leftbutton").click(function(){
+	$(this).toggleClass('button'); //for button icon on click change
+	$('.menuDiv').toggleClass('menuDivshow') // for left menu sliding
+	$('body').toggleClass('toggleleft'); // for push body content
+	});
+	
+	$('.leftbutton, .menuDiv').click(function(event){
+  	event.stopPropagation();
+	});
+
+	//click anywhere for close
+	$("html").click(function(e)
+	  {
+		if( e.target.className !== "leftbutton" && e.target.className !== "menuDiv" && e.target.className !== "menuDivhide" && e.target.className !== "menuDivshow")
+		{
+		  $(".menuDiv").removeClass("menuDivshow");
+		  $('body').removeClass('toggleleft');
+		  $('.leftbutton').removeClass('button');
+		}
+	 }
+	);
+	
+	
+	//right button 
+	$(".rightbutton").click(function(){
+	$(this).toggleClass('button');
+	$('.menuDivright').toggleClass('menuDivshow2')	
+		
+		});
+		
+		
+	
+	//for accordion
+	  $("ul.opMenu li").each(function(){
+		  $(this).click(function(){
+				if($(this).hasClass('opened')==false){
+					$('.opMenu').find('.opened').removeClass('opened').find('ul').slideUp();
+					$(this).addClass('opened'); 
+					$(this).find("ul").slideDown();
+				}else{
+					$(this).removeClass('opened'); 
+					$(this).find("ul").slideUp();				
+				}
+		  });
+	  });    
+	});
+
+
+</script>
+
+
+</body>
+</html>

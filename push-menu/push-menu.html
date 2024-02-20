@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<title>Body push menu</title>
+
+
+<link rel="stylesheet" href="style.css"/>
+</head>
+
+<body class="abcd">
+<div class="topBar">
+	<div class="logo"><img src="logo.png" alt=""></div>
+</div>
+<div style="padding-top:58px;">
+	<div class="rightbutton bt">
+      	<span class="toggle"></span>
+    </div>
+ 
+  <div class="content">
+  <div class="banner"><img src="s4.jpg"></div>
+  <h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
+  
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+</div>
+<div class="menuDiv menuDivhide">
+	<div class="leftbutton bt">
+      	<span class="toggle"></span>
+    </div>
+
+	
+    
+    
+    
+  <h3>Menu</h3>
+  <ul class="opMenu">
+    <li><a href="#">LV01-01</a>
+      <ul>
+        <li><a href="#">LV02</a></li>
+        <li><a href="#">LV02</a></li>
+        <li><a href="#">LV02</a></li>
+      </ul>
+    </li>
+    <li><a href="#">LV01-02</a>
+      <ul>
+        <li><a href="#">LV02</a></li>
+        <li><a href="#">LV02</a></li>
+        <li><a href="#">LV02</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div class="searchBox">
+    <input type="text" placeholder="Search"/>
+    <input type="submit" value="GO"/>
+  </div>
+</div>
+<div class="menuDivright menuDivhide2">Menu</div>
+<script src="jquery.min.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+	$(".leftbutton").click(function(){
+	$(this).toggleClass('is-active'); //for button icon on click change
+	$('.menuDiv').toggleClass('menuDivshow') // for left menu sliding
+	$('body').toggleClass('toggleleft'); // for push body content
+	});
+	
+	$('.leftbutton, .menuDiv').click(function(event){
+  	event.stopPropagation();
+	});
+
+	//click anywhere for close
+	$("html").click(function(e)
+	  {
+		if( e.target.className !== "leftbutton" && e.target.className !== "menuDiv" && e.target.className !== "menuDivhide" && e.target.className !== "menuDivshow")
+		{
+		  $(".menuDiv").removeClass("menuDivshow");
+		  $('body').removeClass('toggleleft');
+		  $('.leftbutton').removeClass('is-active');
+		}
+	 }
+	);
+	
+	
+	//right button 
+	$(".rightbutton").click(function(){
+	$(this).toggleClass('is-active');
+	$('.menuDivright').toggleClass('menuDivshow2')	
+		
+		});
+		
+		
+	
+	//for accordion
+	  $("ul.opMenu li").each(function(){
+		  $(this).click(function(){
+				if($(this).hasClass('opened')==false){
+					$('.opMenu').find('.opened').removeClass('opened').find('ul').slideUp();
+					$(this).addClass('opened'); 
+					$(this).find("ul").slideDown();
+				}else{
+					$(this).removeClass('opened'); 
+					$(this).find("ul").slideUp();				
+				}
+		  });
+	  });    
+	});
+
+$(window).load(function(){
+	$("body, html").css("overflow-x","hidden")
+	
+	});
+</script>
+
+
+</body>
+</html>

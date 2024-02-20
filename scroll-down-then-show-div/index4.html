@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+
+<link rel="stylesheet" type="text/css" href="/css/result-light.css">
+<style type="text/css">
+*{margin:0px; padding:0px;}
+*{box-sozing:border-box; -webkit-box-sozing:border-box; -moz-box-sozing:border-box;}
+#bottomMenu {
+	display: none;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	border-top: 1px solid #000;
+	background: #fff;
+	z-index: 1;
+}
+body {
+	font: 14px Verdana;
+}
+p{margin-bottom:30px;}
+</style>
+<title>Article finished example by b9chris</title>
+</head>
+
+<body>
+<div id=bottomMenu>You read this article. Maybe read the other stuff I'm going to put here.</div>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+<p>Text</p>
+
+
+
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type='text/javascript'>//<![CDATA[
+
+(function() {
+    var $win = $(window);
+    
+    function checkScroll() {
+        if ($win.scrollTop() > 100) {
+            $win.off('scroll', checkScroll);
+            $('#bottomMenu').fadeIn(2000);
+        }
+		
+    }
+    
+    $win.scroll(checkScroll);
+})();
+//]]> 
+
+</script>
+</body>
+</html>

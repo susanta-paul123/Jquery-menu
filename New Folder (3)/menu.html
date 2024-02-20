@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Untitled Document</title>
+<style>
+body, html{height:100%;}
+*{margin:0px; padding:0px;}
+ul{list-style:none;}
+#menu li ul{display:none;}
+#menu li{position:relative; border-top:1px solid #0CF;}
+#menu li a{display:block; padding:5px 10px; background:#06C; color:#fff; text-decoration:none;}
+#menu li li a{background:#036;}
+.icon{width:30px; height:30px; background:#f00 url(plus.png) no-repeat center center; position:absolute; right:20px; top:0px; cursor:pointer; z-index:999;}
+.clicked{background:#fff url(minus.png) no-repeat center center;}
+</style>
+</head>
+
+<body>
+<ul id="menu">
+<li>
+<a href="https://www.google.co.in/?gws_rd=ssl">Home</a>
+    <ul>
+        <li><a href="https://www.google.co.in/?gws_rd=ssl">Sub menu 1</a></li>
+        <li><a href="https://www.google.co.in/?gws_rd=ssl">Sub menu 2</a></li>
+        <li><a href="https://www.google.co.in/?gws_rd=ssl">Sub menu 3</a></li>
+    </ul>
+</li>
+<li>
+<a href="https://www.google.co.in/?gws_rd=ssl">About us</a>
+    <ul>
+        <li><a href="https://www.google.co.in/?gws_rd=ssl">Sub menu 4</a></li>
+        <li><a href="https://www.google.co.in/?gws_rd=ssl">Sub menu 5</a></li>
+        <li><a href="https://www.google.co.in/?gws_rd=ssl">Sub menu 6</a></li>
+    </ul>
+</li>
+<li>
+<a href="https://www.google.co.in/?gws_rd=ssl">Contact us</a>
+</li>
+</ul>
+<script src="jquery.min.js" type="text/javascript"></script>
+<!--<script type="text/javascript">
+	$(document).ready(function(){
+		$("#menu > li:has(ul)").prepend('<div class="icon"></div>');
+		$(".icon").click(function(){
+			$(this).parent().children("ul").slideToggle();
+			
+			$(document).click(function (e) {
+		if (!$(e.target).hasClass("icon") && $(e.target).parents().children("ul").length === 0) 
+		{
+			$("#menu > li > ul").slideUp();
+		}
+	});
+	});	
+	});		
+		
+		
+		//$(".icon").click(function(){
+		//$(this).parent().children("ul").slideDown();
+		
+		//$(this).parent().children("ul").slideUp();
+		
+		//});
+		
+	
+		
+</script>-->
+
+<script>
+$(document).ready(function() {
+$("#menu > li:has(ul)").prepend('<div class="icon"></div>');
+
+$('.icon').click(function(e){
+if($(this).hasClass('clicked'))
+	{
+	$(this).removeClass('clicked').parent().children('ul').slideUp(500);
+	}
+else if($(this).parents().siblings().children('ul').hasClass('clicked'))
+	{
+	$('.clicked').slideDown();
+	$(this).addClass('clicked').parent().children('ul').slideDown(500);	
+	}
+else{
+	$('#menu li').children(".icon").removeClass('clicked').parent().children('ul').slideUp(500);
+	$(this).addClass('clicked').parent().children('ul').slideDown(500);	
+	}
+})
+	
+});
+</script>
+
+</body>
+</html>

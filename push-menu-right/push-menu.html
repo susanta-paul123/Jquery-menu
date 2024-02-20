@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<title>Body push menu</title>
+
+
+<link rel="stylesheet" href="style.css"/>
+</head>
+
+<body class="abcd">
+<div class="rightbutton"></div>
+ <div class="content">
+  <div class="banner"><img src="s4.jpg"></div>
+  <h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
+  
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+</div>
+
+<div class="menuDivright menuDivhide2">Menu</div>
+
+
+<script src="jquery.min.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+	//right button 
+	$(".rightbutton").click(function(){
+	$(this).toggleClass('is-active');
+	$('.menuDivright').toggleClass('menuDivshow2')	
+	$('body').toggleClass('toggleright');	
+		});
+	//for accordion
+	    
+	});
+
+
+</script>
+
+
+</body>
+</html>

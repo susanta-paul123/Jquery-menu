@@ -1,0 +1,239 @@
+
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+/*
+html, body {
+	height: 100%;
+	width: 100%;
+}
+html{background:#f9C;}*/
+body {
+	background: #7e94b3;
+	color: #fff;
+	overflow-x:hidden;
+	transition: all ease-in 0.2s;
+}
+html{overflow-x:hidden;}
+
+img{vertical-align:middle;}
+.banner img{max-width:100%; background:#F00;}
+.logo{margin:10px 15px;}
+.menuDiv {
+	transition: all ease-in 0.2s;
+}
+.menuDivhide {
+	left: -250px;
+}
+.menuDiv {
+	width: 250px;
+	background: #456087;
+	position: fixed;
+	height: 100%;
+	top: 0;
+	padding: 15px;
+	padding-top: 60px;
+}
+.menuDivshow {
+	left: 0;
+}
+.abcd {
+	left: 0;
+	overflow-x: hidden;
+	position: relative;
+	
+}
+.content{transition: all ease-in 0.2s;}
+.content.toggleleft {
+	margin-left: 250px;
+}
+.content {
+	padding: 15px;
+	padding-left:50px;
+}
+.menuDivright {
+	width: 250px;
+	background: #930;
+	position: fixed;
+	height: 100%;
+	top: 0;
+	transition: all ease-in 0.2s;
+	padding: 15px;
+	padding-top: 60px;
+}
+.menuDivhide2 {
+	right: -250px
+}
+
+.topBar {
+	background: #1b365b;
+	left: 0;
+	min-height: 58px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10001;
+}
+.menuDivshow2 {
+	right: 0;
+}
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.opMenu li ul {
+	display: none;
+}
+.opMenu li {
+	border-bottom: 1px solid #F60;
+}
+.opMenu li.opened a {
+	background: #6d0b12;
+}
+.opMenu li a {
+	display: block;
+	background: #F30;
+	color: #fff;
+	font-size: 14px;
+	text-decoration: none;
+	padding: 3px 15px;
+}
+.opMenu li ul li a, .opMenu li.opened ul li a {
+	background: #ff7781;
+}
+.menuDiv h3 {
+	color: #fff;
+	margin-bottom: 15px;
+}
+.searchBox {
+	margin-top: 30px;
+}
+.searchBox input[type="text"] {
+	width: 100%;
+	height: 40px;
+	border: 1px solid #CCC;
+	float: left;
+	padding: 0px 50px 0 15px;
+}
+.searchBox input[type="submit"] {
+	width: 40px;
+	height: 40px;
+	border: 1px solid #CCC;
+	float: left;
+	margin-left: -40px;
+	cursor: pointer;
+}
+.leftbutton.Fixed {
+    position: fixed;
+    top: 0;
+}
+
+/********Left and right button style*************/
+.rightbutton {
+	width: 40px;
+	height: 40px;
+	background:#fff;
+	border: none;
+	position: relative;
+	z-index: 2;
+	text-indent: -9999px;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+}
+.leftbutton {
+	width: 40px;
+	height: 40px;
+	border: none;
+	background:#fff;
+	position: absolute;
+	z-index: 4;
+	text-indent: -9999px;
+	cursor: pointer;
+	display: inline-block;
+	right:-40px; 
+	top:60px;
+}
+
+.leftbutton span.toggle, .rightbutton span.toggle{
+	display: block;
+    height: 4px;
+    left: 6px;
+    position: absolute;
+    right: 6px;
+    top: 18px;
+	background-color: #1b365b;
+    transition: background 0s ease 0.3s;
+	}
+.leftbutton span.toggle:before, .leftbutton span.toggle:after, 
+.rightbutton span.toggle:before, .rightbutton span.toggle:after {
+	position: absolute;
+	display: block;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	content: "";
+}
+.leftbutton span.toggle:before, .rightbutton span.toggle:before {
+	top: -9px;
+}
+.leftbutton span.toggle:after, .rightbutton span.toggle:after {
+	bottom: -9px;
+}
+
+.leftbutton.bt span.toggle:before, 
+.leftbutton.bt span.toggle:after, 
+.rightbutton.bt span.toggle:before, 
+.rightbutton.bt span.toggle:after {
+	background-color: #1b365b;
+	-webkit-transition-duration: 0.3s, 0.3s;
+	transition-duration: 0.3s, 0.3s;
+	-webkit-transition-delay: 0.3s, 0s;
+	transition-delay: 0.3s, 0s;
+}
+
+.leftbutton.bt span.toggle:before, .rightbutton.bt span.toggle:before {
+	-webkit-transition-property: top, -webkit-transform;
+	transition-property: top, transform;
+}
+.leftbutton.bt span.toggle:after, .rightbutton.bt span.toggle:after {
+	-webkit-transition-property: bottom, -webkit-transform;
+	transition-property: bottom, transform;
+}
+.leftbutton.bt.is-active:before, .rightbutton.bt.is-active:before
+ {
+	top: 0;
+}
+.leftbutton.bt.is-active span.toggle:before, .leftbutton.bt.is-active span.toggle:after, 
+.rightbutton.bt.is-active span.toggle:before, .rightbutton.bt.is-active span.toggle:after {
+	-webkit-transition-delay: 0s, 0.3s;
+	transition-delay: 0s, 0.3s;
+}
+
+.leftbutton.bt.is-active span.toggle:before, .rightbutton.bt.is-active span.toggle:before {
+	top: 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.leftbutton.bt.is-active span.toggle:after, .rightbutton.bt.is-active span.toggle:after {
+	bottom: 0;
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.leftbutton.bt.is-active span, .rightbutton.bt.is-active span{background:none;}
+/*************end**************/
+
+ @media(max-width:767px) {
+.content{position:relative; }
+.content{left:0;}
+.content.toggleleft {
+	left: 250px;
+	margin-left: 0px;
+	transition: all ease-in 0.2s;
+}
+}

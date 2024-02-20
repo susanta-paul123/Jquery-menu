@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<title>Untitled Document</title>
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+#quotes-bar-menu {
+	max-width: 320px;
+}
+.box {
+	background: #6C3;
+	padding: 5px 0px 0;
+	
+	position: relative;
+}
+.box h4{padding:5px 15px; border-bottom: 1px solid #000;}
+.box .pop {
+	display: none;
+	background: #FC3;
+	padding: 5px 15px;
+	border-bottom: 1px solid #000;
+}
+.box .pop.block {
+	display: block;
+}
+.box .icon:after {
+	width: 3px;
+	height: 10px;
+	content: "";
+	background: #fff;
+	position: absolute;
+	right: 13px;
+	top: 13px;
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	transition: ease-in all 0.3s;
+}
+.box .icon:before {
+	width: 3px;
+	height: 10px;
+	content: "";
+	background: #fff;
+	position: absolute;
+	right: 18px;
+	top: 13px;
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	transition: ease-in all 0.3s;
+}
+.box:hover .icon:after {
+	width: 3px;
+	height: 10px;
+	content: "";
+	background: #fff;
+	position: absolute;
+	right: 13px;
+	top: 13px;
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.box:hover .icon:before {
+	width: 3px;
+	height: 10px;
+	content: "";
+	background: #fff;
+	position: absolute;
+	right: 18px;
+	top: 13px;
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+</style>
+</head>
+
+<body>
+<div id="quotes-bar-menu">
+  <div class="box"> 
+  <h4>Hover2</h4>
+    <div class="pop">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+  </div>
+  <div class="box"> 
+  <h4>Hover3</h4>
+    <div class="pop">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </div>
+  </div>
+  <div class="box"> 
+  <h4>Hover4</h4>
+    <div class="pop">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </div>
+  </div>
+  <div class="box"> 
+  <h4>Hover5</h4>
+  </div>
+</div>
+<script src="jquery.min.js"></script> 
+<script type="text/javascript">
+
+	$(document).ready(function(){
+	
+       $("#quotes-bar-menu > .box").hover(function()
+	   		{
+                $(this).children('.pop').slideDown(200);
+            },
+            function(){
+                $(this).children('.pop').slideUp(200);
+            }
+        );
+		$("#quotes-bar-menu > .box").children(".pop").parents(".box").prepend('<div class="icon"></div>'); //prepend a tag for mobile click
+		});
+</script>
+</body>
+</html>
